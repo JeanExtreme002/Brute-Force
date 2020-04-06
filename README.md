@@ -8,7 +8,7 @@ under any circumstances, be used for abusive practices but only for educational 
 Just run the program by passing the required arguments on the command line. See the example below:
 
 ```
-$ python "Brute Force.py" --command="start app.py {}" --code=200 
+$ python "Brute Force.py" --command="start app {}" --code=200 
 ```
 
 You can also edit the `validator.py` file as you wish as long it has a function called `main(command, password)` that 
