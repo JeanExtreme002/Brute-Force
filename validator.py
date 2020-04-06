@@ -1,7 +1,7 @@
 import os
 
 
-def main(command, password):
+def main(password, command = None) -> int:
 
     """
     Função para verificar uma senha e retornar um código.
@@ -11,5 +11,4 @@ def main(command, password):
     """
 
     cmd = command.format(password)
-    code = os.system(cmd)
-    return code
+    return os.system(cmd)

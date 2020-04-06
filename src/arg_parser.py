@@ -9,8 +9,7 @@ class ArgParser(ArgumentParser):
         ArgumentParser.__init__(self, description = description)
 
         self.add_argument(
-            "--command", required = True, 
-            help = 'Command to run a program. (ex: "start app {}")'
+            "--command", help = 'Command to run a program. (ex: "start app {}")'
             )
 
         self.add_argument(
@@ -25,7 +24,7 @@ class ArgParser(ArgumentParser):
 
         self.add_argument(
             "--range", "-r", default = "A-Za-z0-9",
-            help = 'Creates a charset.txt file with a range of characters. (default: "A-Za-z0-9")'
+            help = 'Creates a charset file with a range of characters. (default: "A-Za-z0-9")'
             )
 
         self.add_argument(
@@ -35,12 +34,12 @@ class ArgParser(ArgumentParser):
 
         self.add_argument(
             "--min", type = int, default = 1,
-            help = 'Maximum password length. (default: 1)'
+            help = 'Minimum password length. (default: 1)'
             )
 
         self.add_argument(
             "--max", type = int, default = 5,
-            help = 'Minimum password length. (default: 5)'
+            help = 'Maximum password length. (default: 5)'
             )
 
         self.add_argument(
@@ -55,10 +54,12 @@ class ArgParser(ArgumentParser):
         Valida os argumentos.
         """
 
-        if not args.command or not "{}" in args.command:
-            err_callback('Please enter a command using "{}" to indicate the location of the password')
+        if args.command and not "{}" in args.command:
+            err_callback('Please enter a command using "{}" to indicate the location of the password.')
 
-        if not args.charset:
+        elif not args.charset:
             err_callback("Please enter a valid file name.")
+
+        return True
 
 

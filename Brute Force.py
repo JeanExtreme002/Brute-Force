@@ -3,6 +3,16 @@ import validator
 import os
 
 
+def err_callback(message = ""):
+
+    """
+    Função para imprimir erro e sair do programa.
+    """
+
+    print(" " + message)
+    os._exit(1)
+
+
 def try_password(password):
 
     """
@@ -12,17 +22,7 @@ def try_password(password):
     if app.args.show == "true":
         print("\r Trying %s..." % password, end = "")
 
-    return True if validator.main(app.args.command, password) == app.args.code else False
-
-
-def err_callback(message = ""):
-
-    """
-    Função para imprimir erro e sair do programa.
-    """
-
-    print(" " + message)
-    os._exit(1)
+    return True if validator.main(password, app.args.command) == app.args.code else False
 
 
 # Configurações do App.
