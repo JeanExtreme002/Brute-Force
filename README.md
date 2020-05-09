@@ -1,7 +1,8 @@
 # Brute Force (Python 3.x)
 
-This is a simple Brute Force program to find a correct password among infinite combinations. This program should not, 
-under any circumstances, be used for abusive practices but only for educational purposes.
+This is a simple Brute Force program to find a correct password among infinite combinations.
+
+:warning: This program should not, under any circumstances, be used for abusive practices but only for educational purposes.
 
 # How to use it ?
 
